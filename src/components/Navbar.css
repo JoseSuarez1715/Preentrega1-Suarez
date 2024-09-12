@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+img{
+    width: 80px;
+}
+
+button{
+    color: white;
+    background-color:#377cc5;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15%;
+}
+
+button:hover{
+    color: #377cc5;
+    background-color:white;
+    border-color: #377cc5;
+}
+
+.barra{
+    display: flex;
+    align-items: center;
+}
