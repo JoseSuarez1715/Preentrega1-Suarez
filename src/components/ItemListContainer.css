@@ -1,0 +1,10 @@
+@font-face {
+    font-family: games cont;
+    src: url(./src/fonts/gomarice_game_continue_02.ttf);
+}
+
+.bienvenido{
+    font-family: games cont;
+    text-align: center;
+    font-size: 2em;
+}
