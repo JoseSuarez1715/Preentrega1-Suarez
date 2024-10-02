@@ -1,11 +1,10 @@
 import './ItemListContainer.css';
+import ProductList from './ProductsList';
 
-export default function ItemListContainer({ mensaje }) {
+export default function ItemListContainer() {
     return (
         <>
-            <section className='bienvenido'>
-                <p>{mensaje}</p>
-            </section>
+            <ProductList/>
         </>
     )
 }
