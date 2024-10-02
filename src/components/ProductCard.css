@@ -11,3 +11,10 @@ img{
     width: 150px;
     height: 100px;
 }
+a{
+    /* text-decoration: none; */
+    color: #377cc5;
+}
+a:hover{
+   color: white;
+}

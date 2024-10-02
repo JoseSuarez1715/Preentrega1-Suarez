@@ -1,20 +1,25 @@
 import { useEffect, useState } from "react";
-import {getProducts} from '../asyncMock.js'
+import { getProducts } from '../asyncMock.js'
 import ProductCard from './ProductCard'
+import { useParams } from "react-router-dom";
+import { useFilter } from "./useFilter.jsx";
 
 export default function ProductList() {
-    const [products, setProducts]= useState ([]);
+    const [products, setProducts] = useState([]);
 
-    useEffect(()=>{
+    useEffect(() => {
         getProducts.then(data => setProducts(data));
-    },[]);
+    }, []);
+
+    const {id} = useParams();
+
+    const itemsFiltrados = useFilter(products, 'category', id)
 
     return (
-         <>
-         <section>
-
-            {products.map(product => (<ProductCard key={product.id} product = {product}/>))}
-         </section>         
-         </>
+        <>
+            <section>
+                {itemsFiltrados.map((product) => (<ProductCard key={product.id} product={product} />))}
+            </section>
+        </>
     )
 }
