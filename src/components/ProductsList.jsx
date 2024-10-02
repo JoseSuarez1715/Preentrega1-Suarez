@@ -3,6 +3,7 @@ import { getProducts } from '../asyncMock.js'
 import ProductCard from './ProductCard'
 import { useParams } from "react-router-dom";
 import { useFilter } from "./useFilter.jsx";
+import "./ProductList.css";
 
 export default function ProductList() {
     const [products, setProducts] = useState([]);

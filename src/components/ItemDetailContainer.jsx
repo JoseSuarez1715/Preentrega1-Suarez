@@ -2,7 +2,7 @@ import './ItemDetailContainer.css';
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getProduct } from "../asyncMock";
-import ProductCard from './ProductCard';
+
 
 export default function ItemDetailContainer() {
 
@@ -16,11 +16,12 @@ export default function ItemDetailContainer() {
 
     return (
         <>
-            <article>
+            <article className='cardDetalle'>
                 <h4>{product.title}</h4>
+                <h5>Categoria: {product.category}</h5>
                 <img src={product.image} alt={product.title} />
-                <p>$ {product.price}</p>
-                <p>Descripcion: {product.description}</p>
+                <p>Precio: ${product.price}</p>
+                <p>{product.description}</p>
             </article>
         </>
     )

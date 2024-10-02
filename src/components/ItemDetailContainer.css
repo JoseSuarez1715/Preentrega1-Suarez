@@ -1,0 +1,11 @@
+.cardDetalle{
+    width: 450px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.cardDetalle img{
+    width: 350px;
+    height: 250px;
+}
