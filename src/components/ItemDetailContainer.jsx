@@ -1,6 +1,6 @@
 import './ItemDetailContainer.css';
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getProduct } from "../asyncMock";
 import ProductCard from './ProductCard';
 
