@@ -2,7 +2,7 @@ import './ItemDetailContainer.css';
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getProduct } from "../asyncMock";
-
+import ItemCount from './ItemCount';
 
 export default function ItemDetailContainer() {
 
@@ -22,6 +22,8 @@ export default function ItemDetailContainer() {
                 <img src={product.image} alt={product.title} />
                 <p>Precio: ${product.price}</p>
                 <p>{product.description}</p>
+                <p>Stock: {product.stock} unidades</p>
+                <ItemCount stock={product.stock}/>                
             </article>
         </>
     )
