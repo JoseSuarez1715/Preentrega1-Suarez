@@ -1,0 +1,11 @@
+.cardCart {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+}
+
+img{
+    height: 70px;
+    width: 100px;
+    margin-right: 15px;
+}

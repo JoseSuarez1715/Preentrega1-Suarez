@@ -23,7 +23,8 @@ export default function ItemDetailContainer() {
                 <p>Precio: ${product.price}</p>
                 <p>{product.description}</p>
                 <p>Stock: {product.stock} unidades</p>
-                <ItemCount stock={product.stock}/>                
+
+                <ItemCount product={product}/>                
             </article>
         </>
     )

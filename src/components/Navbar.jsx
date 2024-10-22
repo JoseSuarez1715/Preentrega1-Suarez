@@ -1,6 +1,7 @@
 import './Navbar.css';
-import Cartwidget from './CartWidget';
+import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
+
 
 export default function navbar() {
     return (
@@ -10,7 +11,7 @@ export default function navbar() {
            <button><Link to={'/category/ultimos-lanzamientos'}>Ultimos lanzamientos</Link></button>
            <button><Link to={'/category/juegos-gratuitos'}>Juegos gratuitos</Link></button>    
            <button><Link to={'/category/clasicos'}>Clasicos</Link></button>
-           <Cartwidget/>
+           <CartWidget/>
         </div>
         </>
     )
