@@ -10,17 +10,19 @@ export default function CartList() {
 
     const [,,,price] = useContext(CartContext);
 
-    // const [total,setTotal]=useState(0);
+    const [,setCart,,,]= useContext(CartContext);
+
+    const [,,,,,setPrice]= useContext(CartContext);
 
     const itemsCarro = cart;
-    
-    // useEffect (()=> {
-    //     const totalUno = itemsCarro.map((item)=>{item[price] + cosa});
-    //     setTotal(total+)},[cart]);
+
+    const bor = () => {
+            setCart([]);
+            setPrice(0);
+    }
 
     console.log([itemsCarro]);
     
-
     return (
         <>  
         <h2>Productos en el carro</h2>
@@ -30,6 +32,8 @@ export default function CartList() {
             </div>
 
         <h3>Total: {price} </h3>
+
+        <button onClick={bor}>Borrar Carro</button>
             </>
 
     )

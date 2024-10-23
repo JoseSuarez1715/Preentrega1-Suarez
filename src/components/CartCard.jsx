@@ -1,7 +1,13 @@
-import "./CartCard.css"
+import { useContext } from "react";
+import "./CartCard.css";
+import { CartContext } from '../context/CartContext';
+
 
 export default function CartCard({product}){
- 
+
+  const [,,,,clearCart]= useContext(CartContext);
+
+
     return(
         <>
         
@@ -9,7 +15,7 @@ export default function CartCard({product}){
         <img src={product.image} alt={product.title}/>
         <h4>{product.title}</h4>
         <p>$ {product.price}</p>
-        <button>Borrar Item</button>
+       
         </article>
         </>      
           )
