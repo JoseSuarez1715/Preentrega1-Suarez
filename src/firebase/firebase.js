@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { doc, getFirestore, getDocs, getDoc, collection,where,query } from "firebase/firestore";
+import { doc, getFirestore, getDocs, getDoc, collection,where,query,addDoc} from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -38,18 +38,18 @@ export async function getSingleProduct(id) {
 
 }
 
-// obtener una collection
+// obtener una coleccion
 export async function getProducts() {
 
     try {
         const querySnapshot = await getDocs(collection(db, 'items'));
         if (querySnapshot.size !== 0) {
-            const productsList = querySnapshot.docs.map(docu => {
+            const productsList = querySnapshot.docs.map((docu) => {
                 return {
                     id: docu.id,
                     ...docu.data()
                 }
-            })
+            });
             return productsList;
         } else {
             console.log('coleccion vacia');
@@ -82,6 +82,17 @@ export async function filterProductsByCategory(category) {
     } catch (error) {
         console.log("error al obtener el documento: " + error);
     }
+}
 
+// agregar una orden
 
+export async function sendOrder(order){
+    const ordersCollection = collection(db,'orders');
+    try{
+        const docRef =await addDoc(ordersCollection,order);
+        console.log('Nueva orden generada: ' + docRef.id);
+        return docRef.id;
+    }catch(error){
+         console.log('error al agregar el documento: ' + error);
+    }
 }

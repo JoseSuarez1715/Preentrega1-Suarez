@@ -45,10 +45,12 @@ export default function ProductsComponent(){
 
     useEffect(() => {
         getSingleProduct(id).then((response) => 
+            
         setProduct(response));
+        
     },[]);
 
-
+    
 
      return (
         <>
@@ -60,7 +62,7 @@ export default function ProductsComponent(){
                 <p>{product.description}</p>
                 <p>Stock: {product.stock} unidades</p>
 
-                <ItemCount product={product}/>                
+                <ItemCount product={product} id={id}/>                
             </article>}
         </>
     )
