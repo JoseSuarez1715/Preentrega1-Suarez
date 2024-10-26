@@ -39,11 +39,12 @@ export default function CartList() {
 
     }
 
-    const carrt = cart.map((product) => ({
+    const [carrt] = cart.map((product) => ({
         id: product.id,
         title: product.title,
-        priice: product.price
+        price: product.price
     }));
+ 
 
 
 
@@ -58,10 +59,11 @@ export default function CartList() {
             date: new Date(),
             items:
                 [carrt],
-            total: price
+            total: Number(price)
         };
 
       sendOrder(newOrder).then(id => setOrderId(id));
+      console.log('elcarrt' + carrt)
     }
     
 
